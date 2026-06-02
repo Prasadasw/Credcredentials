@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+function getApiBaseURL() {
+  if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL;
+  if (import.meta.env.DEV) return '/api';
+  return 'https://dtgcred-be.onrender.com/api';
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: getApiBaseURL(),
   withCredentials: true,
 });
 
