@@ -3,7 +3,7 @@ import axios from 'axios';
 function getApiBaseURL() {
   if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL;
   if (import.meta.env.DEV) return '/api';
-  return 'https://dtgcred-be.onrender.com/api';
+  return 'https://dtgcredapi.globalunityventures.com/api';
 }
 
 const api = axios.create({
